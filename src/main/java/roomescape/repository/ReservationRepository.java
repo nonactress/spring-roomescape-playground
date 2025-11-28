@@ -51,8 +51,8 @@ public class ReservationRepository {
                 .anyMatch(reservation -> reservation.getId().equals(id));
     }
 
-    public void deleteById(Long id) {
-        reservations.removeIf(reservation -> reservation.getId().equals(id));
+    public boolean deleteById(Long id) {
+        return reservations.removeIf(reservation -> reservation.getId().equals(id));
     }
 
     public void clear() {
